@@ -15,7 +15,7 @@
 <script>
   export default {
     methods: {
-      retmove(todo) {
+      remove(todo) {
         this.$store.dispatch('removeTodo', todo)
       }
     },

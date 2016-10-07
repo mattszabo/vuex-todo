@@ -6,10 +6,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     todos: [],
-    newTodo: ''
+    newTodo: '',
+    editing: false
   },
   mutations: {
-    GET_TODO(state, todo) {
+    SET_TODO_TEXT(state, todo) {
       state.newTodo = todo
     },
     ADD_TODO(state) {
@@ -18,8 +19,12 @@ export default new Vuex.Store({
         completed: false
       })
       state.newTodo = ''
+      if(state.editing) {
+        state.editing = false;
+      }
     },
     EDIT_TODO(state, todo) {
+      state.editing = true;
       var todos = state.todos
       todos.splice(todos.indexOf(todo), 1)
       state.todos = todos
@@ -37,8 +42,8 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getTodo({commit}, todo){
-      commit('GET_TODO', todo)
+    setTodoText({commit}, todo){
+      commit('SET_TODO_TEXT', todo)
     },
     addTodo({commit}){
       commit('ADD_TODO')
@@ -63,6 +68,7 @@ export default new Vuex.Store({
     }),
     completedTodos: state => state.todos.filter((todo) => {
       return todo.completed;
-    })
+    }),
+    isEditing: state => state.editing
   }
 })

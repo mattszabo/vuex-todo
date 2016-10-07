@@ -5,13 +5,13 @@
       <li class="list-group-item" v-for="todo in todos">
         {{ todo.body }}
         <div class="btn-group">
-          <button type="button" @click="edit(todo)" class="btn btn-default btn-sm">
+          <button type="button" @click="edit(todo)" class="btn btn-primary btn-sm">
             <span class="glyphicon glyphicon-edit"></span>
           </button>
-          <button type="button" @click="complete(todo)" class="btn btn-default btn-sm">
+          <button type="button" @click="complete(todo)" class="btn btn-success btn-sm">
             <span class="glyphicon glyphicon-ok-circle"></span>
           </button>
-          <button type="button" @click="remove(todo)" class="btn btn-default btn-sm">
+          <button type="button" @click="remove(todo)" class="btn btn-danger btn-sm">
             <span class="glyphicon glyphicon-remove-circle"></span>
           </button>
         </div>

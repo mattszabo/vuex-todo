@@ -1,19 +1,19 @@
 <template>
   <div id="app" class="container">
     <CurrentTodos />
-    <GetTodo />
+    <AddEditTodo />
     <CompletedTodos />
   </div>
 </template>
 
 <script>
-  import GetTodo from './components/GetTodo.vue'
+  import AddEditTodo from './components/AddEditTodo.vue'
   import CurrentTodos from './components/CurrentTodos.vue'
   import CompletedTodos from './components/CompletedTodos.vue'
 
   export default {
     components: {
-      GetTodo,
+      AddEditTodo,
       CurrentTodos,
       CompletedTodos
     }
